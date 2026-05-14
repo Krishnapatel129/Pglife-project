@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/propertydetails.css">
+    <link rel="stylesheet" href="css/propertylist.css">
+    
+    <title>Welcome | PGLife</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" class="nav-img"/>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="fas fa-sign-in-alt"></i> SignIn
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#signupModal">
+                            <i class="fas fa-user"></i> SignUp
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb py-2">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="property_list.html">Mumbai</a></li>
+                <li class="breadcrumb-item active">Ganpati Paying Guest</li>
+            </ol>
+        </nav>
+
+
+        <div id="property-images" class="carousel slide" data-bs-ride="carousel">
+
+            <div class="carousel-indicators">
+               
+            </div>
+
+            <div class="carousel-inner">
+               
+                
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#property-images" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+                    
+
+            <button class="carousel-control-next" type="button" data-bs-target="#property-images" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div> 
+
+
+     <div class="property-summary">
+
+
+    <div class="d-flex justify-content-between align-items-center">
+        
+   
+        <div class="star-container">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+       
+        <div class="interested-container text-center">
+            <i class="far fa-heart"></i>
+            <div>6 interested</div>
+        </div>
+
+    </div>
+
+   
+    <h1 class="property-name mt-2" id="property-name"></h1>
+
+    <div class="property-address" id="property-address">
+    </div>
+
+    
+    <div class="mt-2">
+        <img src="img/male.png"class="male-img">
+       <img src="img/female.png" class="female-img">
+    </div>
+
+    
+    <div class="d-flex justify-content-between align-items-center mt-3">
+
+        
+        <div class="rent-section">
+            <span class="rent" id="property-rent"></span>
+            <span class="rent-unit"> per month</span>
+        </div>
+
+       
+        <a href="#" class="btn book-btn">Book Now</a>
+
+    </div>
+    </div>
+       <div class="property-amenities page-container">
+            <h2 class="amenities-heading">Amenities</h2>
+            <ul id="amenities" class="list-unstyled mt-3"></ul>
+        </div>
+       
+    </div>
+
+    <div class="property-about page-container">
+        <h1>About the Property</h1>
+        <p>Furnished studio apartment - share it with close friends! Located in posh area of Bijwasan in Delhi, this house is available for both boys and girls. Go for a private room or opt for a shared one and make it your own abode. Go out with your new friends - catch a movie at the nearest cinema hall or just chill in a cafe which is not even 2 kms away. Unwind with your flatmates after a long day at work/college. With a common living area and a shared kitchen, make your own FRIENDS moments. After all, there's always a Joey with unlimited supply of food. Remember, all it needs is one crazy story to convert a roomie into a BFF. What's nearby/Your New Neighborhood 4.0 Kms from Dwarka Sector- 21 Metro Station.</p>
+    </div>
+
+    <div class="property-rating">
+        <div class="page-container">
+            <h1>Property Rating</h1>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-6">
+                    <div class="rating-criteria row">
+                        <div class="col-6">
+                            <i class="rating-criteria-icon fas fa-broom"></i>
+                            <span class="rating-criteria-text">Cleanliness</span>
+                        </div>
+                        <div class="rating-criteria-star-container col-6" title="4.3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+
+                    <div class="rating-criteria row">
+                        <div class="col-6">
+                            <i class="rating-criteria-icon fas fa-utensils"></i>
+                            <span class="rating-criteria-text">Food Quality</span>
+                        </div>
+                        <div class="rating-criteria-star-container col-6" title="3.4">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+
+                    <div class="rating-criteria row">
+                        <div class="col-6">
+                            <i class="rating-criteria-icon fa fa-lock"></i>
+                            <span class="rating-criteria-text">Safety</span>
+                        </div>
+                        <div class="rating-criteria-star-container col-6" title="4.8">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="rating-circle">
+                        <div class="total-rating">4.2</div>
+                        <div class="rating-circle-star-container">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="mt-5">
+    <h3>What People Say</h3>
+
+    <div class="row">
+
+        
+        <div class="col-md-6 mb-3">
+            <div class="p3 border-rounded">
+                <div class="d-flex align-items-center mb-2">
+                    <img src="img/man.png" width="40" class="me-3">
+                    <div>
+                        <strong>Rahul Sharma</strong><br>
+                        <small>Stayed for 6 months</small>
+                    </div>
+                </div>
+                <p>Very good PG with all facilities. Clean rooms and friendly environment.</p>
+            </div>
+        </div>
+
+        
+        <div class="col-md-6 mb-3">
+            <div class="p3 border-rounded">
+                <div class="d-flex align-items-center mb-2">
+                    <img src="img/women.png" width="40" class="me-3">
+                    <div>
+                        <strong>Priya Patel</strong><br>
+                        <small>Stayed for 1 year</small>
+                    </div>
+                </div>
+                <p>Safe and comfortable stay. Location is perfect and staff is helpful.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+    </div>
+
+
+
+
+
+
+    <div class="modal fade" id="loginModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5>SignIn</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="login-form">
+                    <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
+                    <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
+                    <button type="submit" class="btn btn-primary w-100">SignIn</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5>SignUp with PGLife </h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="signup-form">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <input type="text" name="full_name" class="form-control" placeholder="Full Name" required>
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-phone-alt"></i>
+                        </span>
+                        <input type="tel"  name="phone" class="form-control" placeholder="Phone Number" required>
+                      </div>
+                      
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-building"></i>
+                        </span>
+                        <input type="text" name="college" class="form-control" placeholder="College Name" required>
+                      </div>
+
+                      <div class="mb-3">
+                        <span> I'm a:</span>
+                        <input type="radio" id="male" name="gender" value="male" class="ms-2">
+                        <label for="male">Male</label>
+
+                        <input type="radio" id="female" name="gender" value="female" class="ms-2">
+                        <label for="female">Female</label>
+                      </div>
+
+                      <button type="submit" class="btn btn-primary w-100">Create Account</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span> Already have an account ?</span>
+                    <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"  data-bs-target="#loginModal">
+                        SignIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("signup-form").addEventListener("submit",function(e){
+            e.preventDefault();
+            
+            let formData = new FormData(this);
+
+            fetch("http://localhost/Project_PGLife/api/signup.php",{
+                method:"POST",
+                body : formData
+            })
+            .then (res => res.text())
+            .then (data =>{
+                alert(data)
+            })
+        })
+
+       document.getElementById("login-form").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let formData = new FormData(this);
+
+    fetch("api/login.php", {   
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.text())
+    .then(data => {
+        console.log(data);
+
+        if(data.trim() === "success"){
+            window.location.href = "property_list.html";
+        } else {
+            alert("Invalid email or password");
+        }
+    });
+});
+
+const params = new URLSearchParams(window.location.search);
+const propertyId = params.get("id");
+
+console.log("Property ID:", propertyId);
+
+if (!propertyId) {
+    alert("Invalid property ID");
+    throw new Error("ID missing");
+}
+
+fetch(`http://localhost/Project_PGLife/api/get_property.php?id=${propertyId}`)
+.then(res => res.json())
+.then(data => {
+
+    console.log("API DATA:", data);
+
+    if (data.error) {
+        alert(data.error);
+        return;
+    }
+
+    // ======================
+    // PROPERTY INFO
+    // ======================
+    document.getElementById("property-name").innerText = data.name;
+    document.getElementById("property-address").innerText = data.address;
+    document.getElementById("property-rent").innerText = "₹ " + data.rent;
+
+    // ======================
+    // CAROUSEL
+    // ======================
+    let inner = document.querySelector(".carousel-inner");
+let indicators = document.querySelector(".carousel-indicators");
+
+inner.innerHTML = "";
+indicators.innerHTML = "";
+
+let imgData = data.images || data.image;
+
+let images = [];
+
+if (imgData) {
+    images = imgData
+        .split(",")
+        .map(i => i.trim())
+        .filter(i => i)
+        .map(i => i.startsWith("img/") ? i : "img/" + i);
+}
+
+if (images.length === 0) {
+    images = ["img/default.jpg"];
+}
+
+images.forEach((img, index) => {
+
+    inner.innerHTML += `
+        <div class="carousel-item ${index === 0 ? "active" : ""}">
+            <img src="${img}" class="d-block w-100">
+        </div>
+    `;
+
+    indicators.innerHTML += `
+        <button type="button"
+            data-bs-target="#property-images"
+            data-bs-slide-to="${index}"
+            class="${index === 0 ? "active" : ""}">
+        </button>
+    `;
+});
+fetch(`api/get_amenities.php?property_id=${propertyId}`)
+.then(res => res.json())
+.then(data => {
+
+    let html = "";
+
+    data.forEach(a => {
+
+        html += `
+            <li class="amenity-item d-flex align-items-center gap-2">
+                <img src="img/amenities/${a.icon}" width="25" height="25">
+                <span>${a.name}</span>
+            </li>
+        `;
+    });
+
+    document.getElementById("amenities").innerHTML = html;
+});
+    console.log("URL:", window.location.href);
+console.log("ID:", propertyId);
+console.log("DATA:", data);
+
+});
+    </script>
+
+    <div class="footer bg-dark">
+        <div class="page-container footer-container">
+            <div class="footer-cities">
+            <div class="footer-city">
+                <a href="property_list.html">PG in Delhi</a>
+            </div>
+            <div class="footer-city">
+                <a href="property_list.html">PG in Mumbai</a>
+            </div>
+            <div class="footer-city">
+                <a href="property_list.html">PG in Bengaluru</a>
+            </div>
+            <div class="footer-city">
+                <a href="property_list.html">PG in Hyderabad</a>
+            </div>
+            </div>
+            <div class="footer-copyright text-light-emphasis">© 2026 Copyright PG Life</div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

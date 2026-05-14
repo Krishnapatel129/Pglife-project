@@ -1,0 +1,225 @@
+.nav-img{
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.banner-container {
+    background: url("../img/bg.png") no-repeat center center;
+    background-size: contain;
+    background-attachment: fixed; 
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.search-box {
+    max-width: 500px;
+    margin: auto;
+}
+.search-box input {
+    border-radius: 30px 0 0 30px;
+}
+
+.search-box button {
+    border-radius: 0 30px 30px 0;
+}
+.search-box input,
+.search-box button {
+    padding: 10px;
+}
+.page-container{
+    padding: 40px 20px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.city-heading{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333;
+    text-align: center;
+}
+
+.city-card{
+     width: 170px;
+    height: 170px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.city-img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+.city-card:hover {
+    transform: scale(1.05);
+    border-color: #007bff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.city-card-container {
+    display: flex;
+    justify-content: center;
+}
+.modal-content{
+    border-radius: 10px;
+    padding: 10px;
+}
+.modal-header{
+    border-bottom: none;
+    text-align: center;
+}
+.modal-header h5{
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+}
+.modal-body{
+    padding: 20px;
+}
+.form-control{
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
+}
+.input-group-text{
+    background-color: #f2f2f2;
+    border: none;
+}
+.btn-primary{
+    background-color: #4a90e2;
+    border: none;
+    padding: 10px;
+}
+.btn-primary:hover{
+    background-color: #357abd;
+}
+.modal-footer{
+    justify-content: center;
+    font-size: 14px;
+}
+.modal-footer a {
+    color : #4a90e2;
+    text-decoration: none;
+}
+.modal-footer a:hover {
+    text-decoration: underline;
+}
+.input [type="radio"]{
+    margin-left: 8px;
+    margin-right: 5px;
+}
+.footer{
+    width: 100%;
+    padding: 30px 0;
+}
+
+.footer-container{
+    text-align: center;
+}
+.footer-cities{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.footer-city a {
+    text-decoration: none;
+    color:white;
+    font-size: 16px;
+}
+.footer-city a:hover{
+    color:#ffc107;
+}
+.footer-copyright{
+    font-size: 14px;
+}
+#results {
+    margin-top: 30px;
+}
+
+/* GRID LAYOUT */
+#results .col-md-4 {
+    margin-bottom: 25px;
+}
+
+/* PROPERTY CARD */
+.property-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+    padding: 15px;
+}
+
+/* HOVER EFFECT */
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* TITLE */
+.property-card h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* ADDRESS */
+.property-card p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+/* PRICE */
+.property-card .price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #28a745;
+    margin-top: 8px;
+}
+
+/* VIEW BUTTON */
+.property-card a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: #ffc107;
+    color: #000;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.property-card a:hover {
+    background: #ffb300;
+    transform: scale(1.05);
+}
+
+/* NO RESULTS TEXT */
+.no-results {
+    text-align: center;
+    font-size: 18px;
+    color: #888;
+    margin-top: 40px;
+}

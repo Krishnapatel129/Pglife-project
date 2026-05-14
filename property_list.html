@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/propertylist.css">
+    <title>Welcome | PGLife</title>
+</head>
+<div>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="img/logo.png" class="nav-img"/>
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="fas fa-sign-in-alt"></i> SignIn
+                        </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#signupModal">
+                            <i class="fas fa-user"></i> SignUp
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+     <nav aria-label="breadcrumb">
+        <ol class="breadcrumb bg-white px-3 py-2">
+            <li class="breadcrumb-item">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Mumbai</li>
+        </ol>
+    </nav>
+
+    <div class="page-container">
+        <div class="filter-bar row justify-content-center">
+            <div class="col-auto" data-bs-toggle="modal" data-bs-target="#filterModal">
+                <img src="img/filter.png" alt="filter"/>
+                <span>Filter</span>
+            </div>
+            <div class="col-auto">
+                <img src="img/desc.png" alt="sort-desc"/>
+                <span id="sortHigh">Highest Rent First</span>
+            </div>
+            <div class="col-auto">
+                <img src="img/asc.png" alt="sort-asc"/>
+                <span id="sortLow">Lowest Rent First</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="property-container">
+
+    </div>
+
+<div class="modal fade" id="filterModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Filter</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <button class="btn btn-outline-dark w-100 mb-2" data-filter="all">No Filter</button>
+        <button class="btn btn-outline-dark w-100 mb-2" data-filter="male">Male</button>
+        <button class="btn btn-outline-dark w-100 mb-2" data-filter="female">Female</button>
+        <button class="btn btn-outline-dark w-100" data-filter="unisex">Unisex</button>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="applyFilter">Apply</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="loginModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5>SignIn</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form id="login-form">
+                    <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
+                    <input type="password" name="password" class="form-control mb-3" placeholder="Password" required>
+                    <button type="submit" class="btn btn-primary w-100">SignIn</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <div class="modal fade" id="signupModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5>SignUp with PGLife </h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="signup-form">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <input type="text" name="full_name" class="form-control" placeholder="Full Name" required>
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-phone-alt"></i>
+                        </span>
+                        <input type="tel"  name="phone" class="form-control" placeholder="Phone Number" required>
+                      </div>
+                      
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <input type="password" name="password" class="form-control" placeholder="Password" required>
+                      </div>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-building"></i>
+                        </span>
+                        <input type="text" name="college" class="form-control" placeholder="College Name" required>
+                      </div>
+
+                      <div class="mb-3">
+                        <span> I'm a:</span>
+                        <input type="radio" id="male" name="gender" value="male" class="ms-2">
+                        <label for="male">Male</label>
+
+                        <input type="radio" id="female" name="gender" value="female" class="ms-2">
+                        <label for="female">Female</label>
+                      </div>
+
+                      <button type="submit" class="btn btn-primary w-100">Create Account</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <span> Already have an account ?</span>
+                    <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"  data-bs-target="#loginModal">
+                        SignIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        document.getElementById("signup-form").addEventListener("submit",function(e){
+            e.preventDefault();
+            
+            let formData = new FormData(this);
+
+            fetch("http://localhost/Project_PGLife/api/signup.php",{
+                method:"POST",
+                body : formData
+            })
+            .then (res => res.text())
+            .then (data =>{
+                alert(data)
+            })
+        })
+
+      document.addEventListener("DOMContentLoaded", function () {
+
+    let currentFilter = "all";
+    let currentSort = "";
+    let selectedFilter = "all";
+
+    const container = document.getElementById("property-container");
+    const sortHigh = document.getElementById("sortHigh");
+    const sortLow = document.getElementById("sortLow");
+    const applyBtn = document.getElementById("applyFilter");
+    const buttons = document.querySelectorAll("#filterModal button[data-filter]");
+
+    // ✅ Filter button select
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
+            buttons.forEach(btn => btn.classList.remove("active"));
+            this.classList.add("active");
+            selectedFilter = this.getAttribute("data-filter");
+        });
+    });
+
+    // ✅ Apply filter
+    applyBtn.addEventListener("click", function () {
+        currentFilter = selectedFilter;
+        fetchProperties();
+
+        bootstrap.Modal.getInstance(
+            document.getElementById("filterModal")
+        ).hide();
+    });
+
+    // ✅ Sorting
+    sortHigh.addEventListener("click", () => {
+        currentSort = "high";
+        fetchProperties();
+    });
+
+    sortLow.addEventListener("click", () => {
+        currentSort = "low";
+        fetchProperties();
+    });
+
+    // ✅ Fetch API
+    function fetchProperties() {
+
+        fetch(`http://localhost/Project_PGLife/api/get_properties.php?gender=${currentFilter}&sort=${currentSort}`)
+            .then(res => res.json())
+            .then(data => {
+
+                container.innerHTML = "";
+
+                if (!data || data.length === 0) {
+                    container.innerHTML = "<h3>No properties found</h3>";
+                    return;
+                }
+
+                data.forEach(property => {
+
+                    let genderImg = property.gender === "male"
+                        ? "img/male.png"
+                        : property.gender === "female"
+                        ? "img/female.png"
+                        : "img/unisex.png";
+
+                    let card = `
+                    <div class="property-card">
+                        
+                        <div class="image-container">
+                            <img src="/Project_PGLife/${property.image}" alt="property">
+                        </div>
+
+                        <div class="content-container">
+
+                            <div class="top-row">
+                                <div>⭐⭐⭐⭐☆</div>
+                                <div>❤️</div>
+                            </div>
+
+                            <div class="detail-container">
+                                <div class="property-name">${property.name}</div>
+                                <div class="property-address">${property.address}</div>
+
+                                <div>
+                                    <img src="${genderImg}" class="gender-img" alt="gender">
+                                </div>
+                            </div>
+
+                            <div class="bottom-row">
+                                <div>
+                                    <div>₹ ${property.rent}</div>
+                                    <div>per month</div>
+                                </div>
+
+                                <div>
+                                    <a href="property_details.html?id=${property.id}" class="btn btn-primary">View</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>`;
+
+                    container.innerHTML += card;
+                });
+
+            })
+            .catch(err => {
+                console.log("API ERROR:", err);
+                container.innerHTML = "<h3>Error loading properties</h3>";
+            });
+    }
+
+    // ✅ Initial load
+    fetchProperties();
+
+});
+    </script>
+
+    <div class="footer bg-dark">
+        <div class="page-container footer-container">
+            <div class="footer-cities">
+            <div class="footer-city">
+                <a href="property_list.html">PG in Delhi</a>
+            </div>
+            <div class="footer-city">
+                <a href="property_list.html">PG in Mumbai</a>
+            </div>
+            <div class="footer-city">
+                <a href="property_list.html">PG in Bengaluru</a>
+            </div>
+            <div class="footer-city">
+                <a href="property_list.html">PG in Hyderabad</a>
+            </div>
+            </div>
+            <div class="footer-copyright text-light-emphasis">© 2026 Copyright PG Life</div>
+        </div>
+    </div>
+</body>
+</html>
