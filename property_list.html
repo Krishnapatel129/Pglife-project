@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/propertydetails.css">
     <link rel="stylesheet" href="css/propertylist.css">
     <title>Welcome | PGLife</title>
 </head>
@@ -205,7 +205,7 @@
     const applyBtn = document.getElementById("applyFilter");
     const buttons = document.querySelectorAll("#filterModal button[data-filter]");
 
-    // ✅ Filter button select
+
     buttons.forEach(button => {
         button.addEventListener("click", function () {
             buttons.forEach(btn => btn.classList.remove("active"));
@@ -214,7 +214,6 @@
         });
     });
 
-    // ✅ Apply filter
     applyBtn.addEventListener("click", function () {
         currentFilter = selectedFilter;
         fetchProperties();
@@ -224,7 +223,6 @@
         ).hide();
     });
 
-    // ✅ Sorting
     sortHigh.addEventListener("click", () => {
         currentSort = "high";
         fetchProperties();
@@ -235,7 +233,7 @@
         fetchProperties();
     });
 
-    // ✅ Fetch API
+    
     function fetchProperties() {
 
         fetch(`http://localhost/Project_PGLife/api/get_properties.php?gender=${currentFilter}&sort=${currentSort}`)
@@ -266,10 +264,23 @@
 
                         <div class="content-container">
 
-                            <div class="top-row">
-                                <div>⭐⭐⭐⭐☆</div>
-                                <div>❤️</div>
+                           <div class="top-row">
+    
+                  
+                             <div class="star-rating" data-id="${property.id}">
+                            <i class="fa-regular fa-star" data-value="1"></i>
+                            <i class="fa-regular fa-star" data-value="2"></i>
+                            <i class="fa-regular fa-star" data-value="3"></i>
+                            <i class="fa-regular fa-star" data-value="4"></i>
+                            <i class="fa-regular fa-star" data-value="5"></i>
+                        </div>
+
+                    
+                            <div class="heart" data-id="${property.id}">
+                                <i class="fa-regular fa-heart"></i>
                             </div>
+
+                        </div>
 
                             <div class="detail-container">
                                 <div class="property-name">${property.name}</div>
@@ -303,8 +314,63 @@
                 container.innerHTML = "<h3>Error loading properties</h3>";
             });
     }
+document.addEventListener("click", function (e) {
 
-    // ✅ Initial load
+    
+    if (e.target.classList.contains("fa-star")) {
+
+        let star = e.target;
+        let value = star.getAttribute("data-value");
+        let parent = star.parentElement;
+        let propertyId = parent.getAttribute("data-id");
+
+        
+        parent.querySelectorAll("i").forEach(s => {
+            s.classList.remove("fa-solid");
+            s.classList.add("fa-regular");
+        });
+
+        
+        parent.querySelectorAll("i").forEach(s => {
+            if (parseInt(s.getAttribute("data-value")) <= value) {
+                s.classList.remove("fa-regular");
+                s.classList.add("fa-solid");
+            }
+        });
+
+        fetch("http://localhost/Project_PGLife/api/add_rating.php", {
+            method: "POST",
+            body: new URLSearchParams({
+                property_id: propertyId,
+                rating: value
+            })
+        });
+    }
+
+   
+    if (e.target.closest(".heart")) {
+
+        let heartDiv = e.target.closest(".heart");
+        let icon = heartDiv.querySelector("i");
+        let propertyId = heartDiv.getAttribute("data-id");
+
+        icon.classList.toggle("fa-solid");
+        icon.classList.toggle("fa-regular");
+
+        icon.style.color = icon.classList.contains("fa-solid") ? "red" : "black";
+
+        fetch("http://localhost/Project_PGLife/api/toggle_interest.php", {
+            method: "POST",
+            body: new URLSearchParams({
+                property_id: propertyId
+            })
+        })
+        .then(res => res.text())
+        .then(data => console.log(data));
+    }
+
+});
+    
     fetchProperties();
 
 });

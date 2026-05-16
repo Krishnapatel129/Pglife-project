@@ -154,12 +154,12 @@
     margin-top: 30px;
 }
 
-/* GRID LAYOUT */
+
 #results .col-md-4 {
     margin-bottom: 25px;
 }
 
-/* PROPERTY CARD */
+
 .property-card {
     background: #fff;
     border-radius: 12px;
@@ -169,13 +169,13 @@
     padding: 15px;
 }
 
-/* HOVER EFFECT */
+
 .property-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
-/* TITLE */
+
 .property-card h5 {
     font-size: 18px;
     font-weight: 600;
@@ -183,14 +183,14 @@
     color: #333;
 }
 
-/* ADDRESS */
+
 .property-card p {
     margin: 5px 0;
     color: #666;
     font-size: 14px;
 }
 
-/* PRICE */
+
 .property-card .price {
     font-size: 16px;
     font-weight: 600;
@@ -198,7 +198,7 @@
     margin-top: 8px;
 }
 
-/* VIEW BUTTON */
+
 .property-card a {
     display: inline-block;
     margin-top: 12px;
@@ -216,7 +216,7 @@
     transform: scale(1.05);
 }
 
-/* NO RESULTS TEXT */
+
 .no-results {
     text-align: center;
     font-size: 18px;
